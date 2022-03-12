@@ -3,9 +3,12 @@ from .models import register
 
 
 def index(request):
-    template_name="index.html"
+    template_name = "index.html"
     person = register.objects.all()
-    return render(request, template_name)
+    context = {"person": person}
+
+    return render(request, template_name, context)
+
 
 
 
